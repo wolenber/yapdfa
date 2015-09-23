@@ -1,8 +1,12 @@
-use output::Output;
+use prelude::*;
 
 #[derive(Clone)]
 #[derive(Debug)]
-pub struct Name(String);
+#[derive(Default)]
+#[derive(Eq, PartialEq)]
+#[derive(Hash)]
+#[derive(Ord, PartialOrd)]
+pub struct Name(pub String);
 
 impl Name {
     pub fn new<T: Into<String>>(s: T) -> Name {

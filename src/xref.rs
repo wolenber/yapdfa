@@ -1,10 +1,11 @@
+use prelude::*;
 use std::collections::BTreeMap;
 use std::u16;
-use output::Output;
 
 /// A cross-reference table permitting random-access into indirect objects
 /// Values are a tuple of (byte position, generation number, object status)
 #[derive(Debug)]
+#[derive(Default)]
 pub struct Xref(BTreeMap<u64, (u64, u16, ObjectStatus)>);
 
 #[derive(Copy, Clone)]

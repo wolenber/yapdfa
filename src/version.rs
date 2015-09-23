@@ -1,6 +1,8 @@
 /// PDF version
 #[derive(Copy, Clone)]
 #[derive(Debug)]
+#[derive(Eq, PartialEq)]
+#[derive(Hash)]
 pub enum Version {
     /// 1.0
     V10,

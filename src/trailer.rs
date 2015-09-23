@@ -1,10 +1,8 @@
-use objects::Dictionary;
-use objects::Integer;
-use objects::Reference;
-use output::Output;
+use prelude::*;
 
 /// A hook to allow easily finding the xrefs table and catalog
 #[derive(Debug)]
+#[derive(Default)]
 pub struct Trailer {
     xref_pos: u64,
     size: u64,
@@ -48,7 +46,7 @@ impl Trailer {
 impl Output for Trailer {
     fn output(&self) -> String {
         let mut dict = Dictionary::new();
-        dict.set("Size", Integer::new(self.size as i64));
+        dict.set("Size", UInteger(self.size));
         dict.set("Root", Reference::from_u64(self.root));
         let dict = dict.output();
         let mut buf = String::new();

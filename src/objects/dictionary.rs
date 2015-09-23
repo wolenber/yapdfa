@@ -1,7 +1,7 @@
-use objects::Name;
-use output::Output;
+use prelude::*;
 
 #[derive(Debug)]
+#[derive(Default)]
 pub struct Dictionary(Vec<(Name, Box<Output>)>);
 
 impl Dictionary {

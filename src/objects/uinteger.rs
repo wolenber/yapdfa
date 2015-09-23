@@ -6,9 +6,9 @@ use prelude::*;
 #[derive(Eq, PartialEq)]
 #[derive(Hash)]
 #[derive(Ord, PartialOrd)]
-pub struct Integer(pub i64);
+pub struct UInteger(pub u64);
 
-impl Output for Integer {
+impl Output for UInteger {
     fn output(&self) -> String {
         format!("{}", self.0)
     }

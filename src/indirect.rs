@@ -1,9 +1,14 @@
+use prelude::*;
 use std::fmt::Debug;
-use output::*;
 
 /// Struct containing indirect fields of an indirect object.
 /// Allows making it prettier, I hope.
+#[derive(Copy, Clone)]
 #[derive(Debug)]
+#[derive(Default)]
+#[derive(Eq, PartialEq)]
+#[derive(Hash)]
+#[derive(Ord, PartialOrd)]
 pub struct IndirectFields {
     pub id: Option<u64>,
     pub byte_pos: Option<u64>,

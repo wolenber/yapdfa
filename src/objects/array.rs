@@ -1,8 +1,7 @@
-use objects::Integer;
-use output::Output;
-use rectangle::Rectangle;
+use prelude::*;
 
 #[derive(Debug)]
+#[derive(Default)]
 pub struct Array(Vec<Box<Output>>);
 
 impl Array {
@@ -12,10 +11,10 @@ impl Array {
 
     pub fn from_rect(r : Rectangle) -> Array {
         let mut buf = Array::new();
-        buf.push(Integer::new(r.x));
-        buf.push(Integer::new(r.y));
-        buf.push(Integer::new(r.width));
-        buf.push(Integer::new(r.height));
+        buf.push(Integer(r.x));
+        buf.push(Integer(r.y));
+        buf.push(Integer(r.width));
+        buf.push(Integer(r.height));
         buf 
     }
 
